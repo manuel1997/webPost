@@ -1,0 +1,44 @@
+
+  <header class="header-area">
+    <!-- Navbar Area -->
+    <div class="newsbox-main-menu">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container-fluid">
+                <!-- Menu -->
+                <nav class="classy-navbar justify-content-between" id="newsboxNav">
+
+                    <!-- Nav brand -->
+                    <a routerLink="/" class="nav-brand"><img [src]="'assets/img/core-img/logo.png'" alt=""></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+
+                        <!-- Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul>
+
+                                <li><a routerLink="/adminpost">Administrar Post</a></li>
+                                <li><a routerLink="/admincategoria">Administrar Categorias</a></li>
+                                <li><a routerLink="/crear_admin">Administrar Usuarios</a></li>
+                                <li><button (click)="loginservice.logout()" class="btn btn-outline-danger btn-sm">Salir</button></li>
+                            </ul>
+
+                        </div>
+                        <!-- Nav End -->
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

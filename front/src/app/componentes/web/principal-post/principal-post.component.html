@@ -1,0 +1,83 @@
+<section class="breaking-news-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Breaking News Widget -->
+                <div class="breaking-news-ticker d-flex flex-wrap align-items-center">
+                    <div class="title">
+                        <h6>Tendencias</h6>
+                    </div>
+                    <div id="breakingNewsTicker" class="ticker">
+                        <ul>
+                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.</a></li>
+                            <li><a href="#">Welcome to Colorlib Family.</a></li>
+                            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Breaking News Area End ##### -->
+
+<div class="hero-area">
+    <!-- Hero Post Slides -->
+    <div class="hero-post-slides">
+        <!-- Single Slide -->
+        <div class="single-slide">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Single Blog Post Area -->
+                    <div class="col-12 col-md-6" *ngFor="let post of post1">
+                        <div class="single-blog-post style-1">
+                            <!-- Blog Thumbnail -->
+                            <div class="blog-thumbnail bg-overlay">
+                                <a href="#"><img class="img-fluid" [src]="imgRuta+post.imagen" alt=""></a>
+                            </div>
+                            
+                            <!-- Blog Content -->
+                            <div class="blog-content">
+                                <span class="post-date">{{post.createdAt | date : 'mediumDate'}}</span>
+                                <a routerLink="/post/{{post.titulo}}/{{post._id}}" class="post-title">{{post.titulo}}</a>
+                                <span class="post-category">{{post.categoria}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6" >
+                        <!-- Single Blog Post Area -->
+                        <div class="single-blog-post style-1-2 mb-30" *ngFor="let post of post2">
+                            <!-- Blog Thumbnail -->
+                            <div class="blog-thumbnail bg-overlay">
+                                <a href="#"><img [src]="imgRuta + post.imagen" alt=""></a>
+                            </div>
+
+                            <!-- Blog Content -->
+                            <div class="blog-content">
+                                <span class="post-date">{{post.createdAt | date : 'mediumDate'}}</span>
+                                <a routerLink="/post/{{post.titulo}}/{{post._id}}" class="post-title">{{post.titulo}}</a>
+                                <span class="post-category">{{post.categoria}}</span>
+                            </div>
+                        </div>
+                        <!-- Single Blog Post Area -->
+                        <div class="single-blog-post style-1-2" *ngFor="let post of post3">
+                            <!-- Blog Thumbnail -->
+                            <div class="blog-thumbnail bg-overlay">
+                                <a href="#"><img class="img-fluid" [src]="imgRuta + post.imagen" alt=""></a>
+                            </div>
+
+                            <!-- Blog Content -->
+                            <div class="blog-content">
+                                <span class="post-date">{{post.createdAt | date : 'mediumDate'}}</span>
+                                <a routerLink="/post/{{post.titulo}}/{{post._id}}" class="post-title">{{post.titulo}}</a>
+                                <span class="post-category">{{post.categoria}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

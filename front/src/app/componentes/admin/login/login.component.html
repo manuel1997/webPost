@@ -1,0 +1,16 @@
+
+<div class="row mt-70">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="single-widget-area newsletter-widget mb-30">
+                <h4>Usuario Administrador</h4>
+                  <!-- <img src="/home/manuel/Descargas/MI-1.png" class="mx-auto d-block m-4" width="150"> -->
+                <form (ngSubmit)="login()">
+                    <input type="text" [(ngModel)]="admin.email"  name="email"  placeholder="Admin">
+                    <input type="password" [(ngModel)]="admin.contrasena" name="contrasena"  placeholder="Password">
+                    <button class="btn newsbox-btn btn-3 m-2 w-100">Iniciar seccion</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

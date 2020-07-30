@@ -1,0 +1,41 @@
+<!-- ##### Top News Area Start ##### -->
+<div class="top-news-area section-padding-100">
+    <div class="container">
+        <div class="row">
+
+            <!-- Single News Area -->
+            <div class="col-12 col-sm-6 col-lg-4" *ngFor="let post of postfinales">
+                <div class="single-blog-post style-2 mb-5">
+                    <!-- Blog Thumbnail -->
+                    <div class="blog-thumbnail">
+                        <a href="#"><img [src]="imgRuta + post.imagen" alt=""></a>
+                        <span class="post-category">{{post.categoria}}</span>
+                    </div>
+
+                    <!-- Blog Content -->
+                    <div class="blog-content">
+                        <span class="post-date">{{post.createdAt | date : 'mediumDate'}}</span>
+                        <a  routerLink="/post/{{post.titulo}}/{{post._id}}" class="post-title">{{post.titulo}}</a>
+                        <a href="#" class="post-author">By Michael Smith</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12" *ngIf="total != 1">
+                <div class="load-more-button text-center">
+                    <button (click)="obtenerMas()" class="btn newsbox-btn">Load More</button>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+<!-- ##### Top News Area End ##### -->
+
+<!-- ##### Add Area Start ##### -->
+<div class="big-add-area mb-100">
+    <div class="container-fluid">
+        <a href="#"><img [src]="'assets/img/bg-img/add2.png'" alt=""></a>
+    </div>
+</div>
+<!-- ##### Add Area End ##### -->

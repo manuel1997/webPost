@@ -1,0 +1,15 @@
+ <!-- Preloader -->
+ <div class="preloader d-flex align-items-center justify-content-center">
+    <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<app-web-navbar></app-web-navbar>
+
+<router-outlet (activate)="scrollTop($event)"></router-outlet>
+
+<app-footer></app-footer>

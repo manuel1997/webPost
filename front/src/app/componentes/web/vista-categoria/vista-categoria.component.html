@@ -1,0 +1,75 @@
+<!-- ##### Breaking News Area Start ##### -->
+<section class="breaking-news-area clearfix">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Breaking News Widget -->
+                <div class="breaking-news-ticker d-flex flex-wrap align-items-center">
+
+                    <div id="breakingNewsTicker" class="ticker">
+                        <h2>{{nombre}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Breaking News Area End ##### -->
+
+
+<!-- ##### News Area Start ##### -->
+<div class="news-area ">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-9">
+
+                <!-- Single News Area -->
+                <div class="single-blog-post d-flex flex-wrap style-5 mb-30" *ngFor="let post of posts">
+                    <!-- Blog Thumbnail -->
+                    <div class="blog-thumbnail">
+                        <a href="#"><img  [src]="imgRuta + post.imagen" alt=""></a>
+                    </div>
+
+                    <!-- Blog Content -->
+                    <div class="blog-content">
+                        <span class="post-date">June 20, 2018</span>
+                        <a href="#" class="post-title">{{post.titulo}}</a>
+                        <a href="#" class="post-author">By Michael Smith</a>
+                        <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus.</p>
+                    </div>
+                </div>
+
+                <ngb-pagination class="d-flex justify-content-center mb-50 mt-50" [collectionSize]="itemsTotal" [pageSize]="itemsXpagina"  [(page)]="pageSelect" [maxSize]="4"  [rotate]="true" [ellipses]="true"  (pageChange)="onPageChange(pageSelect)" ></ngb-pagination>
+
+            </div>
+            
+            <div class="col-12 col-md-4 col-lg-3">
+              <!-- Add Widget -->
+              <div class="single-widget-area add-widget mb-30">
+                  <a href="#">
+                      <img [src]="'assets/img/bg-img/add4.png'" alt="">
+                  </a>
+              </div>
+
+            
+              <!-- Add Widget -->
+              <div class="single-widget-area add-widget mb-30">
+                  <a href="#">
+                      <img [src]="'assets/img/bg-img/add3.png'" alt="">
+                  </a>
+              </div>
+            </div>
+
+          
+
+        </div>
+      
+    </div>
+</div>
+<!-- ##### News Area End ##### -->
+
+
+
+
+
+ 
