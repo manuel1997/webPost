@@ -32,7 +32,6 @@ export class VistaCategoriaComponent implements OnInit {
       this.webservice.PostCategorias(this.nombre,this.page)
         .subscribe(
           res => {
-            console.log(res);
             this.posts = res['posts'];
             this.pageSelect = res['pageSelect']
             this.itemsTotal = res['itemsTotal'];

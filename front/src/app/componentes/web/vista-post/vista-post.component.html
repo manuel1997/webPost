@@ -1,5 +1,13 @@
-  <!-- ##### Post Details Area Start ##### -->
-  <section class="post-news-area  mb-70">
+<div class="container" *ngIf="!posts.imagen && !contenido ; else main_content">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div >
+            <img src="../../../../assets/cargador.gif" >
+        </div>
+    </div>
+</div>
+
+ <ng-template #main_content>
+ <section class="post-news-area  mb-70" >
     <div class="container">
         <div class="row justify-content-center">
             <!-- Post Details Content Area -->
@@ -7,7 +15,7 @@
                 <div class="post-details-content mb-100">
 
                     <img class="mb-30" [src]="'http://localhost:3000/post_img/' + posts.imagen" alt="">
-                      <h3 class="mb-30">{{posts.titulo}}</h3>
+                      <h1 class="mb-30">{{posts.titulo}}</h1>
                       <div [innerHTML]="contenido"></div>
                 </div>
 
@@ -105,4 +113,5 @@
         </div>
     </div>
 </section>
+</ng-template>
 <!-- ##### Post Details Area End ##### -->

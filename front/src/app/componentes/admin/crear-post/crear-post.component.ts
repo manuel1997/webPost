@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AdminService} from '../../../services/admin/admin.service'
 import {LoginService} from '../../../services/admin/login.service'
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import '@ckeditor/ckeditor5-build-classic/build/translations/es';
 import {Router} from '@angular/router';
 
 interface HtmlInputEvent extends Event {
@@ -16,6 +17,18 @@ interface HtmlInputEvent extends Event {
 export class CrearPostComponent implements OnInit {
 
   public Editor = ClassicEditor ;
+
+  public config = {
+    language: 'es',
+    ckfinder: {
+
+      uploadUrl: 'http://localhost:3000/post_img/step?command=QuickUpload&type=Images&responseType=json',
+
+      options: {
+        resourceType: 'Images'
+      }
+    },
+  };
 
   categorias =  [];
 
