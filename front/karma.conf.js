@@ -3,6 +3,9 @@
 
 module.exports = function (config) {
   config.set({
+    files: [
+      'src/assets/js/jquery/jquery-2.2.4.min.js'
+    ],
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [

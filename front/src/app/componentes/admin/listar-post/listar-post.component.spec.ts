@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListarPostComponent } from './listar-post.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('ListarPostComponent', () => {
   let component: ListarPostComponent;
@@ -8,6 +10,7 @@ describe('ListarPostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule,HttpClientTestingModule],
       declarations: [ ListarPostComponent ]
     })
     .compileComponents();

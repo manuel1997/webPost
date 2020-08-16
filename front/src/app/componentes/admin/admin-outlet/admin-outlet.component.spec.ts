@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminOutletComponent } from './admin-outlet.component';
+import {AdminNavbarComponent} from '../admin-navbar/admin-navbar.component'
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('AdminOutletComponent', () => {
   let component: AdminOutletComponent;
@@ -8,7 +11,8 @@ describe('AdminOutletComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminOutletComponent ]
+      imports: [RouterTestingModule,HttpClientTestingModule],
+      declarations: [ AdminOutletComponent,AdminNavbarComponent ]
     })
     .compileComponents();
   }));

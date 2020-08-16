@@ -9,7 +9,9 @@ import {AdminService} from '../../../services/admin/admin.service'
 export class CrearCategoriaComponent implements OnInit {
 
   categoria = [];
-  form = {}
+  form = {
+    nombre:''
+  }
 
   constructor(private adminservice:AdminService) {
 

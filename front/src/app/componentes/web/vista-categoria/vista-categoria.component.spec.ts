@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VistaCategoriaComponent } from './vista-categoria.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('VistaCategoriaComponent', () => {
   let component: VistaCategoriaComponent;
@@ -8,6 +10,7 @@ describe('VistaCategoriaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule,HttpClientTestingModule],
       declarations: [ VistaCategoriaComponent ]
     })
     .compileComponents();

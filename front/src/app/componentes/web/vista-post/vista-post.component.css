@@ -1,0 +1,57 @@
+.social-widget ul li {
+	display:inline-block;
+	margin-right: 10px;
+}
+
+.social-widget ul li a {
+	display:block;
+	padding:6px 15px;
+	font-size:12px;
+	text-transform:uppercase;
+	text-align:center;
+}
+
+.widget.social-widget ul li {
+	width: 33.33%;
+	padding: 3px;
+	margin-right:-4px;
+}
+
+.social-widget ul li a.facebook {
+	color:#FFF !important;
+	background-color:#3b5999;
+}
+
+.social-widget ul li a.twitter {
+	color:#FFF !important;
+	background-color:#00aced;
+}
+
+.social-widget ul li a.google {
+	color:#FFF !important;
+	background-color:#d44332;
+}
+
+.social-widget ul li a.whatsapp {
+	color:#FFF !important;
+	background-color:#5cf978;
+}
+
+.social-widget ul li a.instagram {
+	color:#FFF !important;
+	background-color:#8A3AB9;
+}
+
+.social-widget ul li a.youtube {
+	color:#FFF !important;
+	background-color:#E31010;
+}
+
+.social-widget ul li a.rss {
+	color:#FFF !important;
+	background-color:#FE7E00;
+}
+
+.social-widget ul li a:hover {
+	opacity:0.8;
+}

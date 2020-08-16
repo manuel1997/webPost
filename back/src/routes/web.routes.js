@@ -1,9 +1,13 @@
 const {Router} = require('express');
 const router = Router();
 
+
+
+
      //RUTA DE INDEX
-     const {listarCategorias,post1,post2,post3,postIntermedios,postFinales} = require('../controllers/web/index');
+     const {listarCategorias,buscar,post1,post2,post3,postIntermedios,postFinales} = require('../controllers/web/index');
     router.get('/listarCategorias',listarCategorias);
+    router.get('/busqueda/:datos',buscar);
     router.get('/post1',post1);
     router.get('/post2',post2);
     router.get('/post3',post3);
@@ -16,6 +20,10 @@ const router = Router();
 
       //RUTA VER POST
       const {verPost} = require('../controllers/web/vistapost');
-      router.get('/verPost/:titulo/:id',verPost);
+      router.get('/verPost/:url/:id',verPost);
+
+  
+     
+
 
     module.exports = router;

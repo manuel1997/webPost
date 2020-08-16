@@ -8,7 +8,7 @@ import {LoginService} from '../../../services/admin/login.service'
 })
 export class AdminNavbarComponent implements OnInit {
 
-  constructor( private loginservice:LoginService) { }
+  constructor(public loginservice:LoginService) { }
 
   ngOnInit() {
   }

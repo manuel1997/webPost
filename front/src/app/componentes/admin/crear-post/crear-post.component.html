@@ -50,6 +50,10 @@
                         <input type="file" [(ngModel)]="post.imagen"  name="imagen"  (change)="onPhotoselected($event)" #photoInput>
                         <img [src]="photoSelected || '/assets/img/core-img/no-image.png'" class="img-fluid" style="width: 450px; height: 200px;" alt="no image">
                     </div>
+                    <div class="form-group">
+                        <label for="">Descripcion de Imagen</label>
+                        <input type="text" [(ngModel)]="post.alt" name="alt" class="form-control" placeholder="referencias de la imagen">
+                    </div>
                 </div>
             </div>
             <div class="row">

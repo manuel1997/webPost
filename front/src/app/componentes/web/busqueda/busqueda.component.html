@@ -1,0 +1,79 @@
+<div class="container" *ngIf="!posts; else main_content">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div>
+            <img src="../../../../assets/cargador.gif" >
+        </div>
+    </div>
+</div>
+
+<ng-template #main_content>
+    
+<section class="breaking-news-area clearfix">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Breaking News Widget -->
+                <div class="d-flex flex-wrap align-items-center">
+                    <h3>{{msg}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ 
+<div class="news-area ">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-9">
+
+                <!-- Single News Area -->
+                <div class="single-blog-post d-flex flex-wrap style-5 mb-30" *ngFor="let post of posts">
+                    <!-- Blog Thumbnail -->
+                    <div class="blog-thumbnail">
+                        <a routerLink="/post/{{post.url}}/{{post._id}}"><img [src]="imgRuta + post.imagen" alt=""></a>
+                    </div>
+
+                    <!-- Blog Content -->
+                    <div class="blog-content">
+                        <span class="post-date">June 20, 2018</span>
+                        <a routerLink="/post/{{post.url}}/{{post._id}}" class="post-title">{{post.titulo}}</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-4 col-lg-3">
+                <!-- Add Widget -->
+
+                <!-- Add Widget -->
+                <div class="single-widget-area add-widget mb-30">
+                    <a href="#">
+                        <img [src]="'assets/img/bg-img/add3.png'" alt="">
+                    </a>
+                </div>
+
+
+                <!-- Add Widget -->
+                <div class="single-widget-area add-widget mb-30">
+                    <a href="#">
+                        <img [src]="'assets/img/bg-img/add3.png'" alt="">
+                    </a>
+                </div>
+
+
+                <!-- Add Widget -->
+                <div class="single-widget-area add-widget mb-30">
+                    <a href="#">
+                        <img [src]="'assets/img/bg-img/add3.png'" alt="">
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+</ng-template>

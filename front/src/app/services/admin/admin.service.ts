@@ -16,6 +16,7 @@ export class AdminService {
     const fd =  new FormData();
     fd.append('imagen',file);
     fd.append('admin',admin);
+    fd.append('alt',post.alt);
     fd.append('titulo',post.titulo);
     fd.append('categoria',post.categoria);
     fd.append('status',post.status);

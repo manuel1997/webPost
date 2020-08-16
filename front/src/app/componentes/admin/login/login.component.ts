@@ -9,7 +9,10 @@ import {LoginService} from '../../../services/admin/login.service'
 })
 export class LoginComponent implements OnInit {
 
-  admin = {}; 
+  admin = {
+    email:'',
+    contrasena:''
+  }; 
 
   constructor(
     private loginservice:LoginService,

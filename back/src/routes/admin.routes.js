@@ -2,15 +2,16 @@ const {Router} = require('express');
 const router = Router();
 
 
+
     //RUTAS LOGIN
     const {login,verifyToken} = require('../controllers/admin/login');
 
     router.post('/login',login,verifyToken);
 
     //RUTAS POST
-    const {cargarImg,crearPost,listarPost,verPost,borrarPost,editarPost} = require('../controllers/admin/post'); 
+    const {cargarImg,resizeImg,crearPost,listarPost,verPost,borrarPost,editarPost} = require('../controllers/admin/post'); 
 
-    router.post('/crearPost',verifyToken,cargarImg.single('imagen'),crearPost);
+    router.post('/crearPost',verifyToken,cargarImg,resizeImg);
     router.get('/listPost',listarPost);
     router.get('/post/:id',verPost);
     router.delete('/eliminar/:id',verifyToken,borrarPost);

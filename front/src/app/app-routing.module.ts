@@ -14,6 +14,7 @@ import { LoginComponent } from './componentes/admin/login/login.component';
 import { WebOutletComponent } from './componentes/web/web-outlet/web-outlet.component';
 import { VistaCategoriaComponent } from './componentes/web/vista-categoria/vista-categoria.component';
 import { VistaPostComponent } from './componentes/web/vista-post/vista-post.component';
+import { BusquedaComponent } from './componentes/web/busqueda/busqueda.component'
 import { SeccionPostComponent } from './componentes/web/seccion-post/seccion-post.component';
 
 import {LoginGuard} from './login.guard'
@@ -30,12 +31,16 @@ const routes: Routes = [
          pathMatch: 'full'
         },
       {
-        path: 'post/:nombre/:id', 
+        path: 'post/:url/:id', 
         component: VistaPostComponent
       },
       {
         path: 'categoria/:nombre/:numpage', 
         component: VistaCategoriaComponent
+      },
+      {
+        path: 'busqueda/:datos', 
+        component: BusquedaComponent
       },
     ]
   },

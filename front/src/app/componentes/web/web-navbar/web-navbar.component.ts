@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WebService} from '../../../services/web/web.service'
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-web-navbar',
@@ -9,8 +10,10 @@ import {WebService} from '../../../services/web/web.service'
 export class WebNavbarComponent implements OnInit {
 
   categorias = [];
+
+  post:any = {}
   
-  constructor(private webservice:WebService) 
+  constructor(private webservice:WebService, private router: Router,) 
   {
     this.webservice.categorias(this.categorias)
     .subscribe(
@@ -22,6 +25,10 @@ export class WebNavbarComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  verPost() {
+    this.router.navigate(['/busqueda/'+this.post.buscar]);
   }
 
 }

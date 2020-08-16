@@ -12,14 +12,27 @@
         <div class="row justify-content-center">
             <!-- Post Details Content Area -->
             <div class="col-12 col-lg-8">
-                <div class="post-details-content mb-100">
+                <div class="post-details-content mb-30">
 
-                    <img class="mb-30" [src]="'http://localhost:3000/post_img/' + posts.imagen" alt="">
-                      <h1 class="mb-30">{{posts.titulo}}</h1>
+                    <img style="margin-bottom: 10px;" [src]="'http://localhost:3000/post_img/' + posts.imagen" [alt]="posts.alt">
+                    <div class=" social-widget">
+                        <ul>
+                            <li><strong class="title">Compartir:&nbsp;&nbsp;</strong></li>
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="google"><i class="fa fa-google"></i></a></li>
+                            <li><a href="#" class="whatsapp"><i class="fa fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                      <h1 class="mb-30 mt-15">{{posts.titulo}}</h1>
                       <div [innerHTML]="contenido"></div>
                 </div>
 
+                
+
             </div>
+
+            
 
             <!-- Sidebar Widget -->
             <div class="col-12 col-sm-9 col-md-6 col-lg-4">

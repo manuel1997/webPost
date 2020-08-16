@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditarPostComponent } from './editar-post.component';
+import { FormsModule } from '@angular/forms';
 
 describe('EditarPostComponent', () => {
   let component: EditarPostComponent;
@@ -8,6 +9,7 @@ describe('EditarPostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [FormsModule],
       declarations: [ EditarPostComponent ]
     })
     .compileComponents();

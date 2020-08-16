@@ -32,9 +32,12 @@
 
                             <!-- Header Add Area -->
                             <div class="header-add-area">
-                                <a href="#">
-                                   <img [src]="'assets/img/bg-img/add.png'" alt="">
-                                </a>
+                                <form (ngSubmit)="verPost()">
+                                    <div class="input-group">
+                                      <input class="form-control" [(ngModel)]="post.buscar" name="buscar" maxlength="100" placeholder="Buscar" type="text" autocomplete="off">
+                                      <span class="input-group-btn"><button type="submit"  class="btn"><i class="fa fa-search"></i></button></span>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <!-- Nav End -->

@@ -17,6 +17,10 @@ const {Schema,model} = require('mongoose');
             type:String,
             required:true
         },
+        alt:{
+            type:String,
+            required:false
+        },
         descripcion:{
             type:String,
             required:true
@@ -26,11 +30,14 @@ const {Schema,model} = require('mongoose');
             required:true
         },
         status:{
-            type: String,
+            type: Number,
             required:true,
+            default:0
         }
     },{
         timestamps:true
     })
+
+    PostSchema.index({titulo: "text"});
 
     module.exports = model('Post',PostSchema);

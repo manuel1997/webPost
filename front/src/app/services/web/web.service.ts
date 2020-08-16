@@ -47,4 +47,8 @@ export class WebService {
     return this.http.get<any>(this.URL +'verPost/'+titulo+'/'+id);
   }
 
+  busquedaPost(datos:string){
+    return this.http.get<any>(this.URL+`busqueda/${datos}`);
+  }
+
 }

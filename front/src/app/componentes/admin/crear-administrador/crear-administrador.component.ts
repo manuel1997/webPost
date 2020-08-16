@@ -8,7 +8,11 @@ import {AdminService} from '../../../services/admin/admin.service'
 })
 export class CrearAdministradorComponent implements OnInit {
 
-  admin = {};
+  admin = {
+    email:'',
+    contrasena:'',
+    nombre:''
+  };
   adminlist = [];
   
   constructor(private adminservice:AdminService) { }

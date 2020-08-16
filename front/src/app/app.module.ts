@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http'
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from "@angular/forms";
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { AdminOutletComponent } from './componentes/admin/admin-outlet/admin-outlet.component';
 import { AdminNavbarComponent } from './componentes/admin/admin-navbar/admin-navbar.component';
@@ -23,10 +24,12 @@ import { FinalPostComponent } from './componentes/web/final-post/final-post.comp
 import { FooterComponent } from './componentes/web/footer/footer.component';
 import { VistaCategoriaComponent } from './componentes/web/vista-categoria/vista-categoria.component';
 import { VistaPostComponent } from './componentes/web/vista-post/vista-post.component';
+import { BusquedaComponent } from './componentes/web/busqueda/busqueda.component'
 import { SeccionPostComponent } from './componentes/web/seccion-post/seccion-post.component';
 
 import {LoginGuard} from './login.guard'
-import {TokenIterceptorService} from './services/admin/token-iterceptor.service'
+import {TokenIterceptorService} from './services/admin/token-iterceptor.service';
+
 
 
 
@@ -50,6 +53,7 @@ import {TokenIterceptorService} from './services/admin/token-iterceptor.service'
     VistaCategoriaComponent,
     VistaPostComponent,
     SeccionPostComponent,
+    BusquedaComponent,
     
     
   ],

@@ -24,8 +24,7 @@ export class VistaPostComponent implements OnInit {
 
   ngOnInit() {
     this.activateRoute.params.subscribe(params => {
-      this.titulo = params['nombre'];
-      this.titulo = this.titulo.replace(/\+|-/g, " ");
+      this.titulo = params['url'];
       this.id = params['id'];   
       this.webservice.verPost(this.titulo,this.id)
         .subscribe(
@@ -33,6 +32,7 @@ export class VistaPostComponent implements OnInit {
             console.log(res);
             this.posts.imagen = res.imagen
             this.posts.titulo = res.titulo
+            this.posts.alt = res.alt
             this.contenido = this.sanitizer.bypassSecurityTrustHtml(res.descripcion);
           },
           err => console.log(err)

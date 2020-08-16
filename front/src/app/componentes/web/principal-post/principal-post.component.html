@@ -12,13 +12,13 @@
                         <div class="single-blog-post style-1">
                             <!-- Blog Thumbnail -->
                             <div class="blog-thumbnail bg-overlay">
-                                <a href="#"><img class="img-fluid" [src]="imgRuta+post.imagen" alt=""></a>
+                                <a href="#"><img class="img-fluid" [src]="imgRuta+post.imagen" [alt]="post.alt"></a>
                             </div>
                             
                             <!-- Blog Content -->
                             <div class="blog-content">
                                 <span class="post-date">{{post.createdAt | date : 'mediumDate'}}</span>
-                                <a routerLink="/post/{{post.titulo}}/{{post._id}}" class="post-title">{{post.titulo}}</a>
+                                <a routerLink="/post/{{post.url}}/{{post._id}}" class="post-title">{{post.titulo}}</a>
                                 <span class="post-category">{{post.categoria}}</span>
                             </div>
                         </div>
@@ -26,16 +26,16 @@
                     
                     <div class="col-12 col-md-6" >
                         <!-- Single Blog Post Area -->
-                        <div class="single-blog-post style-1-2 mb-30" *ngFor="let post of post2">
+                        <div class="single-blog-post style-1-2 " *ngFor="let post of post2">
                             <!-- Blog Thumbnail -->
                             <div class="blog-thumbnail bg-overlay">
-                                <a href="#"><img [src]="imgRuta + post.imagen" alt=""></a>
+                                <a href="#"><img [src]="imgRuta + post.imagen" [alt]="post.alt"></a>
                             </div>
 
                             <!-- Blog Content -->
                             <div class="blog-content">
                                 <span class="post-date">{{post.createdAt | date : 'mediumDate'}}</span>
-                                <a routerLink="/post/{{post.titulo}}/{{post._id}}" class="post-title">{{post.titulo}}</a>
+                                <a routerLink="/post/{{post.url}}/{{post._id}}" class="post-title">{{post.titulo}}</a>
                                 <span class="post-category">{{post.categoria}}</span>
                             </div>
                         </div>
@@ -43,13 +43,13 @@
                         <div class="single-blog-post style-1-2" *ngFor="let post of post3">
                             <!-- Blog Thumbnail -->
                             <div class="blog-thumbnail bg-overlay">
-                                <a href="#"><img class="img-fluid" [src]="imgRuta + post.imagen" alt=""></a>
+                                <a href="#"><img class="img-fluid" [src]="imgRuta + post.imagen" [alt]="post.alt"></a>
                             </div>
 
                             <!-- Blog Content -->
                             <div class="blog-content">
                                 <span class="post-date">{{post.createdAt | date : 'mediumDate'}}</span>
-                                <a routerLink="/post/{{post.titulo}}/{{post._id}}" class="post-title">{{post.titulo}}</a>
+                                <a routerLink="/post/{{post.url}}/{{post._id}}" class="post-title">{{post.titulo}}</a>
                                 <span class="post-category">{{post.categoria}}</span>
                             </div>
                         </div>
