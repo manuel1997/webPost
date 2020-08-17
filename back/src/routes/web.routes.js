@@ -19,8 +19,9 @@ const router = Router();
      router.get('/postCategorias/:nombre/:numpage',postCategoria);
 
       //RUTA VER POST
-      const {verPost} = require('../controllers/web/vistapost');
+      const {verPost,relacionados} = require('../controllers/web/vistapost');
       router.get('/verPost/:url/:id',verPost);
+      router.get('/relacionados/',relacionados);
 
   
      

@@ -34,6 +34,7 @@ export class FinalPostComponent implements OnInit {
       .subscribe(
         res => {
           this.postfinales = res['posts']
+          if(this.postfinales.length == 0){return 0}
           this.page = res['page'];
          this.getId = this.postfinales[2]['_id']
           

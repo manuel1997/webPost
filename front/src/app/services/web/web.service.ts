@@ -47,6 +47,10 @@ export class WebService {
     return this.http.get<any>(this.URL +'verPost/'+titulo+'/'+id);
   }
 
+  relacionados(categoria,id){
+    return this.http.get<any>(this.URL+'relacionados',{params: {categoria:categoria,id:id}})
+  }
+
   busquedaPost(datos:string){
     return this.http.get<any>(this.URL+`busqueda/${datos}`);
   }

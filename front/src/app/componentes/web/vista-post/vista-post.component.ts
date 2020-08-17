@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {WebService} from '../../../services/web/web.service'
-import { DomSanitizer} from '@angular/platform-browser'
+import { ActivatedRoute, Router } from '@angular/router';
+import { WebService } from '../../../services/web/web.service'
+import { DomSanitizer } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-vista-post',
@@ -10,34 +10,46 @@ import { DomSanitizer} from '@angular/platform-browser'
 })
 export class VistaPostComponent implements OnInit {
 
-  titulo:string;
-  id:string;
-  contenido:any;
-  posts:any = {};
- 
+  titulo: string;
+  id: string;
+  contenido: any;
+  posts: any = {};
+
+  postRelacionados = [];
+
   constructor(
     private activateRoute: ActivatedRoute,
     private router: Router,
-    private webservice:WebService,
-    private sanitizer:DomSanitizer,
-    ) {}
+    private webservice: WebService,
+    private sanitizer: DomSanitizer,
+  ) { }
 
   ngOnInit() {
     this.activateRoute.params.subscribe(params => {
       this.titulo = params['url'];
-      this.id = params['id'];   
-      this.webservice.verPost(this.titulo,this.id)
+      this.id = params['id'];
+      this.webservice.verPost(this.titulo, this.id)
         .subscribe(
           res => {
-            console.log(res);
+          
             this.posts.imagen = res.imagen
             this.posts.titulo = res.titulo
             this.posts.alt = res.alt
             this.contenido = this.sanitizer.bypassSecurityTrustHtml(res.descripcion);
+            this.posts.categoria = res.categoria
+
+            this.webservice.relacionados(this.posts.categoria,this.id)
+              .subscribe(
+                res => {
+                  this.postRelacionados = res
+                },
+                err => console.log(err)
+              )
+
           },
           err => console.log(err)
         )
-  });
+    });
   }
 
 }
