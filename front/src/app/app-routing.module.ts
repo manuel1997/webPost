@@ -25,23 +25,11 @@ const routes: Routes = [
     path:'',
     component: WebOutletComponent,
     children: [
-      { 
-        path: '',
-         component: SeccionPostComponent,
-         pathMatch: 'full'
-        },
-      {
-        path: 'post/:url/:id', 
-        component: VistaPostComponent
-      },
-      {
-        path: 'categoria/:nombre/:numpage', 
-        component: VistaCategoriaComponent
-      },
-      {
-        path: 'busqueda/:datos', 
-        component: BusquedaComponent
-      },
+      { path: '',component: SeccionPostComponent, pathMatch: 'full'},
+      { path: 'post/:url/:id', component: VistaPostComponent},
+      { path: 'categoria/:nombre/:numpage', component: VistaCategoriaComponent},
+      { path: 'busqueda/:datos', component: BusquedaComponent},
+      { path: '**', redirectTo: '' }
     ]
   },
 
@@ -50,31 +38,12 @@ const routes: Routes = [
     component: AdminOutletComponent,
     canActivate:[LoginGuard],
     children: [
-      { 
-        path: 'adminpost',
-         component: ListarPostComponent,
-         canActivate:[LoginGuard]
-        },
-      {
-        path: 'crearpost', 
-        component: CrearPostComponent,
-        canActivate:[LoginGuard]
-      },
-      {
-        path: 'editarpost/:id', 
-        component: EditarPostComponent,
-        canActivate:[LoginGuard]
-      },
-      {
-        path: 'admincategoria', 
-        component: CrearCategoriaComponent,
-        canActivate:[LoginGuard]
-      },
-      {
-        path: 'crear_admin', 
-        component: CrearAdministradorComponent,
-        canActivate:[LoginGuard]
-      },
+      { path: 'adminpost', component: ListarPostComponent, canActivate:[LoginGuard] },
+      { path: 'crearpost', component: CrearPostComponent, canActivate:[LoginGuard] },
+      { path: 'editarpost/:id', component: EditarPostComponent, canActivate:[LoginGuard] },
+      { path: 'admincategoria', component: CrearCategoriaComponent, canActivate:[LoginGuard] },
+      { path: 'crear_admin', component: CrearAdministradorComponent, canActivate:[LoginGuard] },
+      { path: '**', redirectTo: '' }
     ]
   },
 
@@ -83,10 +52,14 @@ const routes: Routes = [
     component: LoginComponent,
   },
 
+  { path: '**', redirectTo: '' }
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

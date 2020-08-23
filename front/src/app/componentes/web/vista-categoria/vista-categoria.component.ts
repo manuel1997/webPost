@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {WebService} from '../../../services/web/web.service'
+import * as Global from  '../../../global';
 
 @Component({
   selector: 'app-vista-categoria',
@@ -9,7 +10,7 @@ import {WebService} from '../../../services/web/web.service'
 })
 export class VistaCategoriaComponent implements OnInit {
 
-  imgRuta:string ='http://localhost:3000/post_img/';
+  imgRuta = Global.Url_img;
   
   posts = [];
   nombre:any;
@@ -48,7 +49,6 @@ export class VistaCategoriaComponent implements OnInit {
   }
 
   public onPageChange(pageNum: number): void {
-    window.scroll(0,50)
     this.router.navigate(['/categoria/'+this.nombre+'/'+pageNum]);
   }
 

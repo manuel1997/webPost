@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Title,Meta } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WebService } from '../../../services/web/web.service'
 import { DomSanitizer } from '@angular/platform-browser'
+import * as Global from  '../../../global';
+
 
 @Component({
   selector: 'app-vista-post',
@@ -9,6 +12,8 @@ import { DomSanitizer } from '@angular/platform-browser'
   styleUrls: ['./vista-post.component.css']
 })
 export class VistaPostComponent implements OnInit {
+
+  imgRuta = Global.Url_img;
 
   titulo: string;
   id: string;
@@ -18,6 +23,8 @@ export class VistaPostComponent implements OnInit {
   postRelacionados = [];
 
   constructor(
+    private title:Title,
+    private meta: Meta,
     private activateRoute: ActivatedRoute,
     private router: Router,
     private webservice: WebService,
@@ -25,12 +32,16 @@ export class VistaPostComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+   
+
     this.activateRoute.params.subscribe(params => {
       this.titulo = params['url'];
       this.id = params['id'];
       this.webservice.verPost(this.titulo, this.id)
         .subscribe(
           res => {
+            this.title.setTitle(res.titulo);
           
             this.posts.imagen = res.imagen
             this.posts.titulo = res.titulo

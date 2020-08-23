@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {WebService} from '../../../services/web/web.service'
+import * as Global from  '../../../global';
 
 @Component({
   selector: 'app-principal-post',
@@ -9,7 +10,7 @@ import {WebService} from '../../../services/web/web.service'
 })
 export class PrincipalPostComponent implements OnInit {
 
-  imgRuta:string ='http://localhost:3000/post_img/';
+  imgRuta = Global.Url_img;
 
   post1 = [];
   post2 = [];

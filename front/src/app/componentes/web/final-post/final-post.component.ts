@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WebService } from '../../../services/web/web.service'
+import * as Global from  '../../../global';
+
 
 
 @Component({
@@ -10,7 +12,7 @@ import { WebService } from '../../../services/web/web.service'
 })
 export class FinalPostComponent implements OnInit {
 
-  imgRuta: string = 'http://localhost:3000/post_img/';
+  imgRuta = Global.Url_img;
 
   postfinales = [];
 
@@ -34,7 +36,7 @@ export class FinalPostComponent implements OnInit {
       .subscribe(
         res => {
           this.postfinales = res['posts']
-          if(this.postfinales.length == 0){return 0}
+          if(this.postfinales.length >= 0){return 0}
           this.page = res['page'];
          this.getId = this.postfinales[2]['_id']
           

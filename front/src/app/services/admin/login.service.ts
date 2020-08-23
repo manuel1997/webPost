@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {Router} from '@angular/router'
+import * as Global from  '../../global';
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import {Router} from '@angular/router'
 })
 export class LoginService {
 
-  URL = 'http://localhost:3000/';
+  URL = Global.Url_api;
 
   constructor(private http:HttpClient,private router:Router) { }
 

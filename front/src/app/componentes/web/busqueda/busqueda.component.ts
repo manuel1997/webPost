@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {WebService} from '../../../services/web/web.service'
+import * as Global from  '../../../global';
 
 @Component({
   selector: 'app-busqueda',
@@ -10,7 +11,7 @@ import {WebService} from '../../../services/web/web.service'
 export class BusquedaComponent implements OnInit {
 
 
-  imgRuta:string ='http://localhost:3000/post_img/';
+  imgRuta = Global.Url_img;
 
   posts:any = [];
   datos:string;

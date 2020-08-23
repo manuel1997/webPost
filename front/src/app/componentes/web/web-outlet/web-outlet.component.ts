@@ -12,10 +12,6 @@ export class WebOutletComponent implements OnInit {
 
   constructor() { }
 
-  scrollTop(event){
-      window.scroll(0,50)
-  }
-
   ngOnInit() {
     (function ($) {
       'use strict';

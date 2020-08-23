@@ -1,12 +1,4 @@
-<div class="container" *ngIf="!posts.imagen && !contenido ; else main_content">
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div >
-            <img src="../../../../assets/cargador.gif" >
-        </div>
-    </div>
-</div>
 
- <ng-template #main_content>
  <section class="post-news-area  mb-70" >
     <div class="container">
         <div class="row justify-content-center">
@@ -14,7 +6,7 @@
             <div class="col-12 col-lg-8">
                 <div class="post-details-content mb-30">
 
-                    <img style="margin-bottom: 10px;" [src]="'http://localhost:3000/post_img/' + posts.imagen" [alt]="posts.alt">
+                    <img style="margin-bottom: 10px;" [src]="imgRuta+posts.imagen" [alt]="posts.alt">
                     <div class=" social-widget">
                         <ul>
                             <li><strong class="title">Compartir:&nbsp;&nbsp;</strong></li>
@@ -53,13 +45,13 @@
                         <div class="single-blog-post d-flex style-4 mb-30" *ngFor="let postr of postRelacionados">
                             <!-- Blog Thumbnail -->
                             <div class="blog-thumbnail">
-                                <a href="#"><img [src]="'http://localhost:3000/post_img/' + postr.imagen" alt=""></a>
+                                <a routerLink="/post/{{postr.url}}/{{postr._id}}"><img [src]="imgRuta+postr.imagen" alt=""></a>
                             </div>
 
                             <!-- Blog Content -->
                             <div class="blog-content">
                                 <span class="post-date">{{postr.createdAt | date : 'mediumDate'}}</span>
-                                <a href="#" class="post-title">{{postr.titulo}}</a>
+                                <a routerLink="/post/{{postr.url}}/{{postr._id}}" class="post-title">{{postr.titulo}}</a>
                             </div>
                         </div>
                        
@@ -71,5 +63,5 @@
         </div>
     </div>
 </section>
-</ng-template>
+
 <!-- ##### Post Details Area End ##### -->
