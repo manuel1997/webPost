@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WebService } from '../../../services/web/web.service'
-import * as Global from  '../../../global';
+import {environment} from  '../../../../environments/environment';
 
 
 
@@ -12,7 +12,7 @@ import * as Global from  '../../../global';
 })
 export class FinalPostComponent implements OnInit {
 
-  imgRuta = Global.Url_img;
+  imgRuta = environment.Url_img;
 
   postfinales = [];
 

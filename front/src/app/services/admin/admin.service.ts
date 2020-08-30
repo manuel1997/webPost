@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import * as Global from  '../../global';
+import {environment} from  '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
 
-  URL = Global.Url_api;
+  URL = environment.Url_api;
 
   constructor(private http:HttpClient) { }
 
@@ -49,8 +49,11 @@ export class AdminService {
   }
 
   crearCategoria(form){
-    console.log(form);
     return this.http.post<any>(this.URL+'crearCategoria',form);
+  }
+
+  editarCategoria(id:string,form){
+    return this.http.put<any>(this.URL+'editarCategoria/'+id,form);
   }
 
   eliminarCategoria(id:string){

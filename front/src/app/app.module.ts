@@ -55,7 +55,6 @@ import {TokenIterceptorService} from './services/admin/token-iterceptor.service'
     SeccionPostComponent,
     BusquedaComponent,
     
-    
   ],
   imports: [
     BrowserModule,
@@ -63,7 +62,7 @@ import {TokenIterceptorService} from './services/admin/token-iterceptor.service'
     HttpClientModule,
     NgbPaginationModule,
     FormsModule,
-    CKEditorModule
+    CKEditorModule,
   ],
   providers: [
     LoginGuard,

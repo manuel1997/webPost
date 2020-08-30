@@ -2,6 +2,7 @@ const categoriaController = {};
 
 
 const Categoria = require('../../models/categoria');
+const Post = require('../../models/post');
 
 categoriaController.crearCategoria = async (req,res) =>{
     const {nombre} = req.body;
@@ -17,10 +18,12 @@ categoriaController.listarCategorias = async (req,res) => {
 
 categoriaController.editarCategoria = async (req,res) => {
     const {id} = req.params;
-    const {numero,nombre} = req.body;
-    await Categoria.findByIdAndUpdate(id,{numero,nombre});
-    return res.json({notifi: 'categoria Editado',});
+    const {edit,nombre} = req.body;
+    await Categoria.findByIdAndUpdate(id,{nombre});
+    await Post.updateMany({categoria:edit},{$set:{categoria:nombre}},{multi:true});
+    return res.json({notifi: 'categoria Editada',});
 }
+
 
 categoriaController.borrarCategoria = async (req,res) => {
     const categoria = await Categoria.findByIdAndDelete(req.params.id);

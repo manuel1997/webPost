@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {Router} from '@angular/router'
-import * as Global from  '../../global';
+import {environment} from  '../../../environments/environment';
 
 
 @Injectable({
@@ -9,7 +9,7 @@ import * as Global from  '../../global';
 })
 export class LoginService {
 
-  URL = Global.Url_api;
+  URL = environment.Url_api;
 
   constructor(private http:HttpClient,private router:Router) { }
 
@@ -34,6 +34,7 @@ export class LoginService {
 
   logout(){
     localStorage.removeItem('token');
+    localStorage.removeItem('admin');
     this.router.navigate(['/login'])
     }
 

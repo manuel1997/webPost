@@ -29,7 +29,6 @@ const routes: Routes = [
       { path: 'post/:url/:id', component: VistaPostComponent},
       { path: 'categoria/:nombre/:numpage', component: VistaCategoriaComponent},
       { path: 'busqueda/:datos', component: BusquedaComponent},
-      { path: '**', redirectTo: '' }
     ]
   },
 
@@ -43,7 +42,6 @@ const routes: Routes = [
       { path: 'editarpost/:id', component: EditarPostComponent, canActivate:[LoginGuard] },
       { path: 'admincategoria', component: CrearCategoriaComponent, canActivate:[LoginGuard] },
       { path: 'crear_admin', component: CrearAdministradorComponent, canActivate:[LoginGuard] },
-      { path: '**', redirectTo: '' }
     ]
   },
 

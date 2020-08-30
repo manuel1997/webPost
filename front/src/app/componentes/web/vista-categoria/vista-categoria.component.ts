@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {WebService} from '../../../services/web/web.service'
-import * as Global from  '../../../global';
+import {environment} from  '../../../../environments/environment';
 
 @Component({
   selector: 'app-vista-categoria',
@@ -10,7 +10,7 @@ import * as Global from  '../../../global';
 })
 export class VistaCategoriaComponent implements OnInit {
 
-  imgRuta = Global.Url_img;
+  imgRuta = environment.Url_img;
   
   posts = [];
   nombre:any;

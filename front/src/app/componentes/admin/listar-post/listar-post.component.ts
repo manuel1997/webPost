@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AdminService} from '../../../services/admin/admin.service'
+import {environment} from  '../../../../environments/environment';
 
 @Component({
   selector: 'app-listar-post',
@@ -8,6 +9,8 @@ import {AdminService} from '../../../services/admin/admin.service'
   styleUrls: ['./listar-post.component.css']
 })
 export class ListarPostComponent implements OnInit {
+
+  imgRuta = environment.Url_img;
 
   posts = [];
 

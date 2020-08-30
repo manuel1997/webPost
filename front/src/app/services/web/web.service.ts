@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import * as Global from  '../../global';
+import {environment} from  '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebService {
 
-  URL = Global.Url_api;
+  URL = environment.Url_api;
 
   constructor(private http:HttpClient) { }
 

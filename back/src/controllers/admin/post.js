@@ -47,7 +47,7 @@ PostController.resizeImg = async (req, res) => {
     const imagen = `${req.file.originalname.split('.').slice(0, -1)}-${fech}${path.extname(req.file.originalname)}`;
     const nuevoPost = new Post({ admin, titulo, url, descripcion, categoria, status, imagen, alt });
     await nuevoPost.save();
-    return res.json({ notifi: 'Post Creado' });
+    return res.json({ notifi: 'Post Insertado Correctamente' });
     } catch (error) {
         console.error(error);
     }
@@ -59,7 +59,7 @@ PostController.crearPost = async (req, res) => {
     const imagen = req.file.filename;
     const nuevoPost = new Post({ admin, titulo, url, descripcion, categoria, status, imagen });
     await nuevoPost.save();
-    return res.json({ notifi: 'Post Creado' });
+    return res.json({ notifi: 'Post Insertado Correctamente' });
 };
 
 PostController.listarPost = async (req, res) => {

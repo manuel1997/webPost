@@ -3,7 +3,7 @@ import { Title,Meta } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WebService } from '../../../services/web/web.service'
 import { DomSanitizer } from '@angular/platform-browser'
-import * as Global from  '../../../global';
+import {environment} from  '../../../../environments/environment';
 
 
 @Component({
@@ -13,7 +13,7 @@ import * as Global from  '../../../global';
 })
 export class VistaPostComponent implements OnInit {
 
-  imgRuta = Global.Url_img;
+  imgRuta = environment.Url_img;
 
   titulo: string;
   id: string;

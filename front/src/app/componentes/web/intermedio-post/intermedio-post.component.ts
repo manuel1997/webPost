@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {WebService} from '../../../services/web/web.service'
-import * as Global from  '../../../global';
+import {environment} from  '../../../../environments/environment';
 
 @Component({
   selector: 'app-intermedio-post',
@@ -10,7 +10,7 @@ import * as Global from  '../../../global';
 })
 export class IntermedioPostComponent implements OnInit {
 
-  imgRuta = Global.Url_img;
+  imgRuta = environment.Url_img;
   
   postintermedios = [];
 

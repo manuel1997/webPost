@@ -4,6 +4,7 @@
 }
 
 .social-widget ul li a {
+	width: 60px;
 	display:block;
 	padding:6px 15px;
 	font-size:12px;

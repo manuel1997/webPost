@@ -8,9 +8,9 @@ const passport = require('passport');
 loginController.login = async (req,res) => {
     const {email,contrasena} = req.body;
     const admin = await Admins.findOne({email});
-    if(!admin) return res.status(401).send("the email dosent exists" );
-    if(admin.contrasena !== contrasena) return res.status(401).send('Error password');
-
+    if(!admin || admin.contrasena !== contrasena){
+        return res.json({notifi:0});
+    } 
     const token = jwt.sign({_id: admin._id}, 'secretkey');
     return res.status(200).json({token,admin});
 };

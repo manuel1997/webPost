@@ -24,6 +24,15 @@ app.use(require('./routes/admin.routes'));
 app.use(express.static(path.join(__dirname,'public')))
 
 
+/*
+app.use(express.static(path.join(__dirname, 'dist/front')));
+
+// Catch all other routes and return the index file
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/front/index.html'));
+  });
+
+*/
 
 app.listen(app.get('port'), () => {
     console.log('servidor corriendo en el puerto', app.get('port'))

@@ -31,38 +31,6 @@
         });
     }
 
-    // :: 8.0 Progress Bar Active Code
-    if ($.fn.circleProgress) {
-        $('#circle').circleProgress({
-            size: 160,
-            emptyFill: "rgba(0, 0, 0, .0)",
-            fill: '#a2a2a2',
-            thickness: '3',
-            reverse: true
-        });
-        $('#circle2').circleProgress({
-            size: 160,
-            emptyFill: "rgba(0, 0, 0, .0)",
-            fill: '#a2a2a2',
-            thickness: '3',
-            reverse: true
-        });
-        $('#circle3').circleProgress({
-            size: 160,
-            emptyFill: "rgba(0, 0, 0, .0)",
-            fill: '#a2a2a2',
-            thickness: '3',
-            reverse: true
-        });
-        $('#circle4').circleProgress({
-            size: 160,
-            emptyFill: "rgba(0, 0, 0, .0)",
-            fill: '#a2a2a2',
-            thickness: '3',
-            reverse: true
-        });
-    }
-
     // :: 9.0 Tooltip Active Code
     if ($.fn.tooltip) {
         $('[data-toggle="tooltip"]').tooltip()

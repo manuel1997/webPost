@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminService} from '../../../services/admin/admin.service'
 
+declare var $: any;
+
 @Component({
   selector: 'app-crear-administrador',
   templateUrl: './crear-administrador.component.html',
@@ -25,12 +27,14 @@ export class CrearAdministradorComponent implements OnInit {
     this.adminservice.crearAdministrador(this.admin)
     .subscribe(
       res => {
-        console.log(res);
         this.admin = res;
+        $("#exampleModal .close").click()
+        this.listarAdmin();
       },
       err => console.log(err)
     )
   }
+
 
   listarAdmin(){
     this.adminservice.listarAdmin(this.adminlist)
@@ -46,7 +50,8 @@ export class CrearAdministradorComponent implements OnInit {
     this.adminservice.eliminarAdmin(id)
     .subscribe(
       res => {
-        console.log(res);
+        alert(res.notifi);
+        this.listarAdmin();
       },
       err => console.log(err)
     )

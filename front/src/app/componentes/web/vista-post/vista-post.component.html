@@ -7,7 +7,11 @@
                 <div class="post-details-content mb-30">
 
                     <img style="margin-bottom: 10px;" [src]="imgRuta+posts.imagen" [alt]="posts.alt">
-                    <div class=" social-widget">
+               
+                      <h1 class="mb-30 mt-15">{{posts.titulo}}</h1>
+                      <div [innerHTML]="contenido"></div>
+
+                      <div class=" social-widget">
                         <ul>
                             <li><strong class="title">Compartir:&nbsp;&nbsp;</strong></li>
                             <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
@@ -16,8 +20,6 @@
                             <li><a href="#" class="whatsapp"><i class="fa fa-whatsapp"></i></a></li>
                         </ul>
                     </div>
-                      <h1 class="mb-30 mt-15">{{posts.titulo}}</h1>
-                      <div [innerHTML]="contenido"></div>
                 </div>
 
                 

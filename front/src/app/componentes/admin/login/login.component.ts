@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
     contrasena:''
   }; 
 
+  mensaje:number;
+
   constructor(
     private loginservice:LoginService,
     private router:Router
@@ -26,6 +28,8 @@ export class LoginComponent implements OnInit {
     this.loginservice.login(this.admin)
     .subscribe(
       res => {
+        this.mensaje = res.notifi;
+        if(res.notifi !== 0){
         delete res.admin.control;
         delete res.admin.contrasena;
         delete res.admin.createdAt;
@@ -33,6 +37,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('admin',JSON.stringify(res.admin))
         localStorage.setItem('token',res.token);
         this.router.navigate(['/adminpost']);
+      }
       },
       err => console.log(err)
     )

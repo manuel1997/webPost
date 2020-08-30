@@ -1,6 +1,9 @@
 
 <div class="row mt-70">
     <div class="col-md-4 mx-auto">
+        <div *ngIf="mensaje == 0" class="alert alert-danger" role="alert">
+            Error de usuario o contraseña
+          </div>
         <div class="card">
             <div class="single-widget-area newsletter-widget mb-30">
                 <h4>Usuario Administrador</h4>
@@ -12,5 +15,6 @@
                 </form>
             </div>
         </div>
+
     </div>
 </div>

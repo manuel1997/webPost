@@ -6,22 +6,22 @@ const router = Router();
 
      //RUTA DE INDEX
      const {listarCategorias,buscar,post1,post2,post3,postIntermedios,postFinales} = require('../controllers/web/index');
-    router.get('/listarCategorias',listarCategorias);
-    router.get('/busqueda/:datos',buscar);
-    router.get('/post1',post1);
-    router.get('/post2',post2);
-    router.get('/post3',post3);
-    router.get('/postIntermedios',postIntermedios);
-    router.get('/postFinales',postFinales);
+    router.get('/api/listarCategorias',listarCategorias);
+    router.get('/api/busqueda/:datos',buscar);
+    router.get('/api/post1',post1);
+    router.get('/api/post2',post2);
+    router.get('/api/post3',post3);
+    router.get('/api/postIntermedios',postIntermedios);
+    router.get('/api/postFinales',postFinales);
 
      //RUTA DE POST CATEGORIAS
      const {postCategoria} = require('../controllers/web/vistacategoria');
-     router.get('/postCategorias/:nombre/:numpage',postCategoria);
+     router.get('/api/postCategorias/:nombre/:numpage',postCategoria);
 
       //RUTA VER POST
       const {verPost,relacionados} = require('../controllers/web/vistapost');
-      router.get('/verPost/:url/:id',verPost);
-      router.get('/relacionados/',relacionados);
+      router.get('/api/verPost/:url/:id',verPost);
+      router.get('/api/relacionados/',relacionados);
 
   
      
