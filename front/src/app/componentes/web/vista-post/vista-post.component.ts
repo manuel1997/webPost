@@ -32,9 +32,6 @@ export class VistaPostComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-   
-
     this.activateRoute.params.subscribe(params => {
       this.titulo = params['url'];
       this.id = params['id'];
@@ -42,6 +39,7 @@ export class VistaPostComponent implements OnInit {
         .subscribe(
           res => {
             this.title.setTitle(res.titulo);
+            this.meta.updateTag({name: 'description',content: res.sumario})
           
             this.posts.imagen = res.imagen
             this.posts.titulo = res.titulo

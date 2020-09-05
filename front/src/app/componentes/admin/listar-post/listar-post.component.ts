@@ -20,7 +20,11 @@ export class ListarPostComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-      this.adminservice.listarPost(this.posts)
+      this.listarPost();
+    }
+
+    listarPost(){
+    this.adminservice.listarPost(this.posts)
       .subscribe(
         res => {
          this.posts = res
@@ -35,8 +39,7 @@ export class ListarPostComponent implements OnInit {
       this.adminservice.eliminarPost(id)
       .subscribe(
         res =>{
-          console.log(res);
-          this.ngOnInit();
+          this.listarPost();
         },
         err => console.log(err)
       )

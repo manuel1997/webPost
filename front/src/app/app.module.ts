@@ -16,6 +16,7 @@ import { CrearCategoriaComponent } from './componentes/admin/crear-categoria/cre
 import { EditarPostComponent } from './componentes/admin/editar-post/editar-post.component';
 import { CrearAdministradorComponent } from './componentes/admin/crear-administrador/crear-administrador.component';
 import { LoginComponent } from './componentes/admin/login/login.component';
+
 import { WebOutletComponent } from './componentes/web/web-outlet/web-outlet.component';
 import { WebNavbarComponent } from './componentes/web/web-navbar/web-navbar.component';
 import { PrincipalPostComponent } from './componentes/web/principal-post/principal-post.component';
@@ -29,6 +30,9 @@ import { SeccionPostComponent } from './componentes/web/seccion-post/seccion-pos
 
 import {LoginGuard} from './login.guard'
 import {TokenIterceptorService} from './services/admin/token-iterceptor.service';
+import { LoaderComponent } from './componentes/loader/loader.component';
+import {LoaderService} from './services/loader/loader.service'
+import {InterceptorService} from './services/loader/interceptor.service';
 
 
 
@@ -54,8 +58,9 @@ import {TokenIterceptorService} from './services/admin/token-iterceptor.service'
     VistaPostComponent,
     SeccionPostComponent,
     BusquedaComponent,
-    
+    LoaderComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -65,6 +70,12 @@ import {TokenIterceptorService} from './services/admin/token-iterceptor.service'
     CKEditorModule,
   ],
   providers: [
+    LoaderService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:InterceptorService,
+      multi:true
+    },
     LoginGuard,
     {
       provide:HTTP_INTERCEPTORS,

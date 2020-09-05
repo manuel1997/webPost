@@ -18,6 +18,7 @@ import { BusquedaComponent } from './componentes/web/busqueda/busqueda.component
 import { SeccionPostComponent } from './componentes/web/seccion-post/seccion-post.component';
 
 import {LoginGuard} from './login.guard'
+import { LoaderComponent } from './componentes/loader/loader.component';
 
 const routes: Routes = [
 
@@ -48,6 +49,11 @@ const routes: Routes = [
   {
     path:'login',
     component: LoginComponent,
+  },
+
+  {
+    path:'loader',
+    component: LoaderComponent,
   },
 
   { path: '**', redirectTo: '' }

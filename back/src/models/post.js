@@ -9,6 +9,10 @@ const {Schema,model} = require('mongoose');
             type:String,
             required: true
         },
+        sumario:{
+            type:String,
+            required: true
+        },
         url:{
             type:String,
             required: true

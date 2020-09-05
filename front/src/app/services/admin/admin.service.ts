@@ -19,6 +19,7 @@ export class AdminService {
     fd.append('admin',admin);
     fd.append('alt',post.alt);
     fd.append('titulo',post.titulo);
+    fd.append('sumario',post.sumario);
     fd.append('categoria',post.categoria);
     fd.append('status',post.status);
     fd.append('descripcion',post.descripcion);

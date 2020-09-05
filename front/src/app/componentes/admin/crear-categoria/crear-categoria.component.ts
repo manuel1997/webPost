@@ -19,7 +19,7 @@ export class CrearCategoriaComponent implements OnInit {
   }
 
 
-  constructor(private adminservice:AdminService, private modalservice:NgbModal) {
+  constructor(private adminservice:AdminService) {
    }
 
   ngOnInit() {

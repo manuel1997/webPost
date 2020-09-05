@@ -18,22 +18,12 @@ export class CrearPostComponent implements OnInit {
 
   public Editor = ClassicEditor ;
 
-  public config = {
-    language: 'es',
-    ckfinder: {
-
-      uploadUrl: 'http://localhost:3000/post_img/step?command=QuickUpload&type=Images&responseType=json',
-
-      options: {
-        resourceType: 'Images'
-      }
-    },
-  };
 
   categorias =  [];
 
   post:any = { 
     titulo:'',
+    sumario:'',
     categoria:'0',
     status:'0',
     descripcion: ''

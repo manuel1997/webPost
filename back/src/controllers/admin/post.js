@@ -12,7 +12,7 @@ PostController.cargarImg = multer({
     storage: multer.diskStorage({
         destination: path.join(__dirname, '../../public/post_img'),
         filename: (req, file, cb) => {
-            cb(null, Date.now() + path.extname(file.originalname));
+            cb(null, 1+file.originalname);
         }
     }),
     dest: path.join(__dirname, '../../public/post_img'),
@@ -28,7 +28,9 @@ PostController.cargarImg = multer({
     }
 }).single('imagen');
 
-PostController.resizeImg = async (req, res) => {
+
+
+PostController.crearPost = async (req, res) => {
     var date = new Date;
     var d = date.getDate();
     var m = date.getMonth()+1;
@@ -42,10 +44,10 @@ PostController.resizeImg = async (req, res) => {
                 console.log(err);
             }
         })
-    const { admin, titulo, descripcion, categoria, status, alt} = req.body;
+    const { admin, titulo,sumario,descripcion, categoria, status, alt} = req.body;
     const url = titulo.replace(/\+| /g, "-").replace(/[&\/\\#,+()$.'":"!*?<>{}]/g, '').toLowerCase();
     const imagen = `${req.file.originalname.split('.').slice(0, -1)}-${fech}${path.extname(req.file.originalname)}`;
-    const nuevoPost = new Post({ admin, titulo, url, descripcion, categoria, status, imagen, alt });
+    const nuevoPost = new Post({ admin, titulo, sumario, url, descripcion, categoria, status, imagen, alt });
     await nuevoPost.save();
     return res.json({ notifi: 'Post Insertado Correctamente' });
     } catch (error) {
@@ -53,14 +55,7 @@ PostController.resizeImg = async (req, res) => {
     }
 };
 
-PostController.crearPost = async (req, res) => {
-    const { admin, titulo, descripcion, categoria, status } = req.body;
-    const url = titulo.replace(/\+| /g, "-").replace(/[&\/\\#,+()$.'":"!*?<>{}]/g, '').toLowerCase();
-    const imagen = req.file.filename;
-    const nuevoPost = new Post({ admin, titulo, url, descripcion, categoria, status, imagen });
-    await nuevoPost.save();
-    return res.json({ notifi: 'Post Insertado Correctamente' });
-};
+
 
 PostController.listarPost = async (req, res) => {
     const posts = await Post.find().sort({_id: -1}).limit(9)
@@ -75,15 +70,16 @@ PostController.verPost = async (req, res) => {
 
 PostController.borrarPost = async (req, res) => {
     const post = await Post.findByIdAndDelete(req.params.id);
+    await cloudinary.v2.uploader.destroy(post.imagen)
     await fs.unlinkSync(path.resolve('./src/public/post_img/' + post.imagen));
     return res.json({ notifi: 'Post Eliminado' });
 };
 
 PostController.editarPost = async (req, res) => {
     const { id } = req.params;
-    const { titulo, descripcion, categoria, status, alt } = req.body;
+    const { titulo, sumario, descripcion, categoria, status, alt } = req.body;
     const url = titulo.replace(/\+| /g, "-").replace(/[&\/\\#,+()$.'":"!*?<>{}]/g, '').toLowerCase();
-    await Post.findByIdAndUpdate(id, { titulo, url, descripcion, categoria, status, alt });
+    await Post.findByIdAndUpdate(id, { titulo, sumario, url, descripcion, categoria, status, alt });
     return res.json({ notifi: 'Post Editado', });
 }
 

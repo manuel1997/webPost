@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AdminService} from '../../../services/admin/admin.service'
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {environment} from  '../../../../environments/environment';
 
 @Component({
   selector: 'app-editar-post',
@@ -9,6 +10,8 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./editar-post.component.css']
 })
 export class EditarPostComponent implements OnInit {
+  
+  imgRuta = environment.Url_img;
 
   public Editor = ClassicEditor ;
   

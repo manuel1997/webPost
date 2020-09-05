@@ -9,9 +9,9 @@ const router = Router();
     router.post('/api/login',login,verifyToken);
 
     //RUTAS POST
-    const {cargarImg,resizeImg,crearPost,listarPost,verPost,borrarPost,editarPost} = require('../controllers/admin/post'); 
+    const {cargarImg,crearPost,listarPost,verPost,borrarPost,editarPost} = require('../controllers/admin/post'); 
 
-    router.post('/api/crearPost',verifyToken,cargarImg,resizeImg);
+    router.post('/api/crearPost',verifyToken,cargarImg,crearPost);
     router.get('/api/listPost',listarPost);
     router.get('/api/post/:id',verPost);
     router.delete('/api/eliminar/:id',verifyToken,borrarPost);
