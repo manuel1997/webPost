@@ -69,11 +69,10 @@ indexcontroller.postFinales = async (req, res, next) => {
                 res.json({ posts, page });
             })
     } else {
-        await Post.find({ _id: { "$gt": postId } })
-            .sort({_id: -1})
+        await Post.find({ _id: { "$lt": postId } })
             .limit(perPage)
             .exec((err, posts) => {
-                Post.find({ _id: { "$gt": postId } }).countDocuments((err, conteo) => {
+                Post.find({ _id: { "$lt": postId } }).countDocuments((err, conteo) => {
                     if (err) return next(err);
                     return res.json({
                          posts, 

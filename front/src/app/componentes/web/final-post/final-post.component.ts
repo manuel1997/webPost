@@ -36,7 +36,7 @@ export class FinalPostComponent implements OnInit {
       .subscribe(
         res => {
           this.postfinales = res['posts']
-          if(this.postfinales.length >= 0){return 0}
+         
           this.page = res['page'];
          this.getId = this.postfinales[2]['_id']
           
@@ -55,7 +55,7 @@ export class FinalPostComponent implements OnInit {
             this.total = res ['total'];
           for (let i = 0; i < 3; i++) {
             var item = this.cargar_mas[i];
-            this.postfinales.push({ _id: item._id, titulo: item.titulo, imagen: item.imagen });
+            this.postfinales.push({ _id: item._id, url:item.url, createdAt:item.createdAt, titulo: item.titulo, imagen: item.imagen, categoria:item.categoria });
           }
           this.getId = item._id;
 

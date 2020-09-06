@@ -11,6 +11,7 @@ categoriacontroller.postCategoria = async (req, res, next) => {
     
   await  Post
     .find({categoria:nombre})
+    .sort({_id: -1})
     .skip((perPage * page) - perPage)
     .limit(perPage)
     .exec((err,posts) => {
